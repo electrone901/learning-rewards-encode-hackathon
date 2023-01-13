@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {
   Button,
   VStack,
@@ -12,9 +12,14 @@ import {
   Heading,
 } from '@chakra-ui/react'
 import styles from '../../styles/Home.module.css'
+import { MyAppContext } from '../../pages/_app'
 
 function AwardNfts() {
   const apiKeyport = '5aca4bfa-4460-4000-ada2-dfe2b88831e8'
+
+  const [ENSName, setENSName] = useState('')
+  const [ENSResolved, setENSResolved] = useState('')
+  const [avatar, setAvatar] = useState('')
   const [image, setImage] = useState('')
   const [response, setResponse] = useState('')
   const [name, setName] = useState('')
@@ -25,6 +30,8 @@ function AwardNfts() {
   )
   const file_url =
     'https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+
+  const { provider } = useContext(MyAppContext)
 
   const mintWithNFTPort = (event) => {
     event.preventDefault()
@@ -101,8 +108,64 @@ function AwardNfts() {
       })
   }
 
+  const getENSName = async () => {
+    const to = ENSName ? ENSName : 'elonmussk.eth'
+    const resolver = await provider.getResolver(to)
+    console.log('🚀 ~ file: AwardNfts.js:113 ~ getENSName ~ resolver', resolver)
+    setENSResolved(resolver)
+    const avatar = await resolver.getText('avatar')
+    console.log('🚀 ~ file: AwardNfts.js:116 ~ getENSName ~ avatar', avatar)
+    setAvatar(avatar)
+  }
+
   return (
     <div style={{ width: '60%', paddingTop: '3rem' }}>
+      <Box p={5} shadow="md" borderWidth="1px" style={{ padding: '3rem' }}>
+        <Heading fontSize="xl">Resolve ENS Name </Heading>
+        <div style={{ paddingTop: '.5rem' }}>
+          <Text mb="8px">ENS Domain Name</Text>
+          <Input
+            // value={question}
+            onChange={(e) => setENSName(e.target.value)}
+            placeholder="elonmussk.eth"
+            size="md"
+          />
+          <br />
+          <Button onClick={getENSName} className={styles.connectButton}>
+            Get ENS Name
+          </Button>
+
+          <br />
+          <br />
+          <br />
+
+          {ENSResolved ? (
+            <Box
+              p={5}
+              shadow="md"
+              borderWidth="1px"
+              style={{ padding: '3rem' }}
+            >
+              <Heading fontSize="xl">
+                Congratulations, your {ENSName.name} was resolve to :
+              </Heading>
+              <Box w={200} mt={5} mb={10}>
+                <Image
+                  src={avatar ? avatar : '/bg.png'}
+                  alt="tronnaut 404"
+                ></Image>
+              </Box>
+              <p> {ENSResolved.address}</p>
+            </Box>
+          ) : (
+            ''
+          )}
+        </div>
+      </Box>
+
+      <br />
+      <br />
+
       <Box p={5} shadow="md" borderWidth="1px" style={{ padding: '3rem' }}>
         <Heading fontSize="xl">Send NFTs As Tips Powered By NFTPort</Heading>
 

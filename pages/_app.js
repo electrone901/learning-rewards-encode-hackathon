@@ -1,17 +1,11 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+// import type { AppProps } from 'next/app'
 import React from 'react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import Head from 'next/head'
 import Navbar from '@components/Navbar'
 import Footer from '@components/Footer'
 import { useEffect, useState } from 'react'
-
-// import { mode } from "@chakra-ui/theme-tools";
-import { Provider as WagmiProvider } from 'wagmi'
-// import { WagmiClient } from '../components/utils/wagmiClient'
-// import NavBar from "@components/NavBar";
-// import Footer from "@components/Footer";
 
 const theme = extendTheme({
   styles: {
@@ -61,7 +55,7 @@ export const MyAppContext = React.createContext({
   setChainId: undefined,
 })
 
-export default function App({ Component, pageProps, router }: AppProps) {
+export default function App({ Component, pageProps, router }) {
   const [mounted, setMounted] = useState(false)
   const [currentAccountUd, setCurrentAccountUd] = useState('')
 

@@ -14,17 +14,13 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
-import { handleConnect } from '@utils/web3'
 import { useState, useContext, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 import withTransition from './withTransition'
-import ConnectWallet from './web3/ConnectWallet'
 import { MyAppContext } from '../pages/_app'
 import { ethers } from 'ethers'
 import { ABI } from '../abis/ABI'
 import { disconnect } from 'process'
-
-// const getEthereumObject = () => window.ethereum
 
 export function Landing() {
   const [isLoading, setLoading] = useState<boolean>(false)
@@ -44,7 +40,7 @@ export function Landing() {
 
   useEffect(() => {
     if (!account || !ethers.utils.isAddress(account)) return
-    if (!window.ethereum) return
+    if (!window?.ethereum) return
 
     // saves to localStorage
     if (typeof window !== 'undefined') {
@@ -53,7 +49,7 @@ export function Landing() {
       if (account && account !== fetchedAddress)
         window.localStorage.setItem('ACCOUNT', account)
     }
-    const tempProvider = new ethers.providers.Web3Provider(window.ethereum)
+    const tempProvider = new ethers.providers.Web3Provider(window?.ethereum)
     tempProvider.getBalance(account).then((result) => {
       setBalance(ethers.utils.formatEther(result))
     })
@@ -63,11 +59,11 @@ export function Landing() {
   }, [account])
 
   const handleConnect = async () => {
-    if (!window.ethereum) {
+    if (!window?.ethereum) {
       console.log('please install MetaMask')
       return
     }
-    const tempProvider = new ethers.providers.Web3Provider(window.ethereum)
+    const tempProvider = new ethers.providers.Web3Provider(window?.ethereum)
     setProvider(tempProvider)
     const { chainId } = await tempProvider.getNetwork()
     console.log('chainId', chainId)

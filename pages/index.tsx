@@ -9,7 +9,6 @@ import { MyAppContext } from '../pages/_app'
 
 function Home() {
   const { account } = useContext(MyAppContext)
-  console.log('🚀 ~ file: index.tsx:12 ~ Home ~ account', account)
   const { address } = useTron()
   const [width, setWidth] = useState<number>(window.innerWidth)
 
