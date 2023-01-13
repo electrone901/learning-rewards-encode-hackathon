@@ -88,8 +88,6 @@ function Explore() {
     <div className={styles.container}>
       <main className={styles.main}>
         <Text className={styles.title}>Explore Partners</Text>
-
-        <button onClick={test}>get ENS INFO</button>
         <SimpleGrid columns={2} gap={5} pt={10}>
           {allTasks?.length > 0 ? (
             allTasks.map((task, idx) => (
