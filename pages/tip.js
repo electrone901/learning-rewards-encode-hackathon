@@ -1,16 +1,15 @@
 import React from 'react'
 import withTransition from '@components/withTransition'
+import { useRouter } from 'next/router'
 import AwardNfts from '../components/award-nfts/AwardNfts'
 import { Button } from '@chakra-ui/react'
 import styles from '../styles/Home.module.css'
-import { useRouter } from 'next/router'
 
-function tip(props) {
+function Tip(props) {
   const router = useRouter()
-  const goHome = () => {
+  function goHome() {
     router.push('/')
   }
-
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -25,4 +24,4 @@ function tip(props) {
   )
 }
 
-export default withTransition(tip)
+export default Tip
