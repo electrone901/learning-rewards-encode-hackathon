@@ -1,36 +1,54 @@
-I neeed to deploy the contract to goerlier and 
+# Learning Rewards App
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+#### Video Demo Link: https://youtu.be/9rKopuhb9bA
 
-## Getting Started
+#### Web Demo Link:
+https://learning-rewards-encode-hackathon.vercel.app/
+ https://bounty-hunter2.vercel.app/
 
-First, run the development server:
+#### Name: Learning Rewards
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+#### Challenges Bounties / Sponsors used
+- ENS
+- NFTPort
+- Polygon
+- Livepeer
+- Livepeer Design
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Summary
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Learning Rewards is an application that helps educate and onboard both users and developers into DeFi. Companies and creators will be able to create new quizzes and projects. Users will be able to learn and earn tokens, experience points and practical knowledge.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+#### What it does
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Defi is a revolutionary and ever-expanding space that is still widely unknown to the masses. There are problems with Defi applications:
 
-## Learn More
+- High entry barrier: tech-intensive, major projects are not user-friendly
+- Scattered information: learning required intensive research
+- Inefficient user acquisition: masses are not incentivized enough to learn, participate, and contribute to the Defi ecosystem.
 
-To learn more about Next.js, take a look at the following resources:
+This is why we’ve built Learning Rewards. Learning Rewards is an on-chain quests platform built for all blockchains where users can engage in on-chain tasks called and be rewarded for doing so with token rewards, NFT completion badges, and experience points on the platform.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We believe Learning Rewards will help:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Onboard new users into web3
+- Increase user engagement during current market conditions from existing users
+- Help educate anyone about the ecosystem through hands-on on-chain experiences.
 
-## Deploy on Vercel
+We also want to incentivize learners and builders by tipping NFTs using NFTPort for multi-chain NFT minting, and data transparency.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### What's next for Learning Rewards
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We would like to keep working on:
+Adding more incentives for creators and users
+Verify users using the WorldCoin protocol
+Find partnerships to launch officially
+Build a better responsive UI
+Add testing and monitoring our smart contract
+
+### How it's made
+
+We are using React, next js in the front end, and Metamask and Coinbase in order to log in.
+In the backend, it's mainly Solidity, Openzeppelin, NodeJS, TypeScript, and GraphQL. We are querying data from the Everest Subgraph and Uniswap v2 subgraph. We're storing that data in IPFS
+
+contract: https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js
