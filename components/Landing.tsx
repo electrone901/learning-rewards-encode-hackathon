@@ -24,7 +24,7 @@ import { ethers } from 'ethers'
 import { ABI } from '../abis/ABI'
 import { disconnect } from 'process'
 
-const getEthereumObject = () => window.ethereum
+// const getEthereumObject = () => window.ethereum
 
 export function Landing() {
   const [isLoading, setLoading] = useState<boolean>(false)
