@@ -13,7 +13,7 @@ https://learning-rewards-encode-hackathon.vercel.app/
 - NFTPort
 - Polygon
 - Livepeer
-- Livepeer Design
+- Livepeer Best Design Challenge
 
 #### Summary
 
