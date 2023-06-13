@@ -13,6 +13,7 @@ export default function QuestCard({
   handleClick,
   isLocked,
 }: QuestCardProps) {
+  
   return (
     <HStack
       className={isLocked ? styles.lockedQuest : styles.questCard}

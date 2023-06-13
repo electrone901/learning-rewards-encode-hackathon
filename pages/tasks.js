@@ -28,8 +28,8 @@ function Explore() {
     const getAllTasks = async (contract) => {
       const data = []
       const allTasks = await contract.getAllTasks()
-      console.log('🚀 ~ file: tasks.tsx:21 ~ getAllTasks ~ allTasks', allTasks)
-      setAllTasks(allTasks)
+      console.log('______All in useEffect ', allTasks)
+      // setAllTasks(allTasks)
 
       for (let i = 0; i < allTasks.length; i++) {
         const obj = {}
@@ -43,8 +43,10 @@ function Explore() {
         const reward = ethers.utils.formatEther(weiValue)
 
         let getNFTStorageData = await fetch(IPFSCid)
+
         let temp = await getNFTStorageData.json()
         const task = JSON.parse(temp.description)
+        console.log('🚀 ~ file: tasks.js:49 ~ getAllTasks ~ task:', task)
         obj.completed = completed
         obj.id = id
         obj.owner = owner
@@ -60,6 +62,7 @@ function Explore() {
         obj.title = task.title
         data.unshift(obj)
       }
+
       setAllTasks(data)
     }
     if (account && contract) {

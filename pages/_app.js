@@ -59,7 +59,7 @@ export default function App({ Component, pageProps, router }) {
   const [mounted, setMounted] = useState(false)
   const [currentAccountUd, setCurrentAccountUd] = useState('')
 
-  const [account, setAccount] = useState('')
+  const [account, x] = useState('')
   const [contract, setContract] = useState('')
   const [provider, setProvider] = useState('')
   const [signer, setSigner] = useState('')

@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 import { MyAppContext } from '../pages/_app'
 
 const Navbar = ({ account, setAccount, userUD }) => {
-  console.log('🚀 ~ file: Navbar.tsx:12 ~ Navbar ~ userUD', userUD)
+
   const { address, setAddress } = useTron()
   const router = useRouter()
   const [isHover, setIsHover] = useState<boolean>(false)

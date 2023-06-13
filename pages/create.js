@@ -16,6 +16,7 @@ import { useRouter } from 'next/router'
 import CreateContentFirstPart from '@components/CreateContentFirstPart'
 import withTransition from '@components/withTransition'
 import { apiKey } from '../components/APIKEYS'
+
 import { MyAppContext } from './_app'
 import { ethers } from 'ethers'
 
@@ -32,6 +33,7 @@ const CustomeInput = ({ setTempOption }) => {
 }
 
 function Create() {
+  console.log('🚀 ~ file: create.js:19 ~ apiKey:', apiKey)
   const { account, contract } = useContext(MyAppContext)
   const dummyData = [
     {

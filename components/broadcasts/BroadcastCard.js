@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-// import { Player } from '@livepeer/react'
+import { Player } from '@livepeer/react'
 function BroadcastCard({ stream, handleShow, showAssets }) {
   return (
     <Card
